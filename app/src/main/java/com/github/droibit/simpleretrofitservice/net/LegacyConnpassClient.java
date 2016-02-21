@@ -2,7 +2,6 @@ package com.github.droibit.simpleretrofitservice.net;
 
 import com.squareup.moshi.Moshi;
 
-import java.util.Date;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -21,14 +20,14 @@ public class LegacyConnpassClient {
 
         @GET("/api/v1/event/")
         Call<EventResponse> searchKeyword(@Query("keyword") String keyword,
-                                          @Query("ymd") List<Date> ymdDates,
+                                          @Query("ymd") List<String> ymdDates,
                                           @Query("order") Order order,
                                           @Query("start") int start,
                                           @Query("count") int count);
 
         @GET("/api/v1/event/")
         Call<EventResponse> searchEventId(@Query("event_id") String eventId,
-                                          @Query("ymd") List<Date> ymdDates,
+                                          @Query("ymd") List<String> ymdDates,
                                           @Query("order") Order order,
                                           @Query("start") int start,
                                           @Query("count") int count);
