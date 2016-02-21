@@ -2,6 +2,7 @@ buildscript {
     ext {
         kotlin_version = '1.0.0'
         okhttp_version = '3.1.2'
+        retrofit2_version = '2.0.0-beta4'
     }
     repositories {
         mavenCentral()
@@ -44,7 +45,8 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     compile "com.squareup.okhttp3:okhttp:$okhttp_version"
-    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    compile "com.squareup.retrofit2:converter-moshi:$retrofit2_version"
 
     testCompile 'junit:junit:4.12'
     testCompile "com.squareup.okhttp3:mockwebserver:$okhttp_version"
