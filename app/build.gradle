@@ -1,31 +1,14 @@
-buildscript {
-    ext {
-        kotlin_version = '1.0.0'
-        okhttp_version = '3.1.2'
-        retrofit2_version = '2.0.0-beta4'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-repositories {
-    mavenCentral()
-}
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "27.0.2"
 
     defaultConfig {
         applicationId "com.github.droibit.simpleretrofitservice"
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 19
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -41,13 +24,13 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    compile "com.squareup.okhttp3:okhttp:$okhttp_version"
-    compile "com.squareup.retrofit2:retrofit:$retrofit2_version"
-    compile "com.squareup.retrofit2:converter-moshi:$retrofit2_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit2_version"
 
-    testCompile 'junit:junit:4.12'
-    testCompile "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    testImplementation 'junit:junit:4.12'
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
 }
